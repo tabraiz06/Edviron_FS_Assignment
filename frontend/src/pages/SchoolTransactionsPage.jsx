@@ -10,7 +10,9 @@ export default function SchoolTransactionsPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/transactions/${schoolId}`)
+      .get(
+        `https://edviron-fs-assignment.vercel.app/api/transactions/${schoolId}`
+      )
       .then((res) => setTransactions(res.data))
       .catch((err) => console.error(err));
   }, [schoolId]);

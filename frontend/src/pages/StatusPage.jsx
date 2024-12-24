@@ -7,11 +7,13 @@ export default function StatusPage() {
   const [status, setStatus] = useState(null);
 
   const checkStatus = () => {
-   if(!orderId){
-     return alert("Please enter a custom order ID");
-   }
+    if (!orderId) {
+      return alert("Please enter a custom order ID");
+    }
     axios
-      .get(`http://localhost:5000/api/transactions/check-status/${orderId}`)
+      .get(
+        `https://edviron-fs-assignment.vercel.app/api/transactions/check-status/${orderId}`
+      )
       .then((res) => setStatus(res.data))
       .catch((err) => console.error(err));
   };

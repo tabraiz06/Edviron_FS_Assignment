@@ -3,24 +3,26 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-    const navigate= useNavigate();  
+  const navigate = useNavigate();
   const [email, setEmail] = useState("admin@gmail.com");
   const [password, setPassword] = useState("123456");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/user/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://edviron-fs-assignment.vercel.app/api/user/login",
+        {
+          email,
+          password,
+        }
+      );
       console.log("Login successful", response.data);
 
-        localStorage.setItem("token", response.data.token);
-        if(response.data.token){
-          navigate("/");   
-         }
-
+      localStorage.setItem("token", response.data.token);
+      if (response.data.token) {
+        navigate("/");
+      }
     } catch (error) {
       console.error("Login failed", error);
     }

@@ -20,7 +20,7 @@ app.use("/api/user", AuthRoutes);
 app.use("/api/transactions", transactionRoutes);
 
 // CSV Import - Run once to import data
-importCSV("./data/test.csv");
+// importCSV("./data/test.csv");
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
