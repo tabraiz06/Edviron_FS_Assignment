@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  @apply bg-gray-800 text-white;
+  button {
+    @apply bg-blue-700 text-white;
+  }
+  select{
+    @apply bg-gray-700 text-white border-white;
+  }
+  input{
+    @apply bg-gray-700 text-white border-black;
+  }
+}
+input{
+  padding: 5px 10px;
+  border: 2px solid #111213;
+}
