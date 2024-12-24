@@ -4,7 +4,7 @@ const { createPayment } = require("../utils/paymentService");
 // Fetch All Transactions
 const getTransactions = async (req, res) => {
   try {
-    const transactions = await Transaction.find({});
+    const transactions = await Transaction.find();
     res.json(transactions);
   } catch (error) {
     res.status(500).json({ message: "Server Error" });
