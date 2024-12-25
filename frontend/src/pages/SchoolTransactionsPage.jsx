@@ -13,7 +13,7 @@ export default function SchoolTransactionsPage() {
       .get(
         `https://edviron-fs-assignment.vercel.app/api/transactions/${schoolId}`,
         {
-          Headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       )
       .then((res) => setTransactions(res.data))

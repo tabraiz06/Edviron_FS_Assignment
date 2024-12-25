@@ -19,8 +19,7 @@ const Register = async (req, res) => {
 // Login
 const Login = async (req, res) => {
   const { email, password } = req.body;
-  const user =
-    (await User.findOne({ email }) );
+  const user = await User.findOne({ email });
 
   if (!user) return res.status(400).send("Email not found");
 
@@ -28,6 +27,7 @@ const Login = async (req, res) => {
   if (!validPass) return res.status(400).send("Invalid password");
 
   const token = jwt.sign({ _id: user._id }, "SECRET_KEY");
+  res.cookie("token", token, { httpOnly: true, maxAge: 7200000 }); // 2 Hours
   res.status(200).json({ token, user });
 };
 

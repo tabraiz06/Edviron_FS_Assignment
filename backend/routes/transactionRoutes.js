@@ -8,13 +8,13 @@ const {
   createTransaction,
   webhookUpdate,
 } = require("../controllers/transactionController");
-const { protect } = require("../middleware/authMiddleware");
+const  protect  = require("../middleware/authMiddleware");
 
-router.get("/",protect, getTransactions);
-router.get("/:school_id",protect, getTransactionsBySchool);
-router.get("/check-status/:custom_order_id",protect, checkStatus);
-router.post("/update-status", protect, updateTransactionStatus);
-router.post("/create-payment", protect, createTransaction);
-router.post("/webhook", protect, webhookUpdate);
+router.get("/", getTransactions);
+router.get("/:school_id", getTransactionsBySchool);
+router.get("/check-status/:custom_order_id", checkStatus);
+router.post("/update-status", updateTransactionStatus);
+router.post("/create-payment", createTransaction);
+router.post("/webhook", webhookUpdate);
 
 module.exports = router;

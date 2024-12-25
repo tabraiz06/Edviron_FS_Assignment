@@ -14,7 +14,7 @@ export default function StatusPage() {
       .get(
         `https://edviron-fs-assignment.vercel.app/api/transactions/check-status/${orderId}`,
         {
-          Headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       )
       .then((res) => setStatus(res.data))

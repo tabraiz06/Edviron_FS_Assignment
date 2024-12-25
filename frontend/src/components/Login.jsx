@@ -18,10 +18,11 @@ export default function Login() {
         }
       );
       console.log("Login successful", response.data);
+      console.log("Token", response.data.token);
 
       localStorage.setItem("token", response.data.token);
       if (response.data.token) {
-        window.location.href = "/transactions";
+       
         navigate("/transactions");
       }
     } catch (error) {
