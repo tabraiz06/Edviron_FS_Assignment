@@ -12,15 +12,13 @@ export default function TransactionsPage() {
 
   const [transactions, setTransactions] = useState([]);
   const [filteredStatus, setFilteredStatus] = useState("");
-  console.log(localStorage.getItem("token"));
+ 
 
   const fectData = async () => {
     try {
       const res = await axios.get(
         "https://edviron-fs-assignment.vercel.app/api/transactions",
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
+       
       );
       setTransactions(res.data);
     } catch (err) {

@@ -13,9 +13,7 @@ export default function StatusPage() {
     axios
       .get(
         `https://edviron-fs-assignment.vercel.app/api/transactions/check-status/${orderId}`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
+       
       )
       .then((res) => setStatus(res.data))
       .catch((err) => console.error(err));

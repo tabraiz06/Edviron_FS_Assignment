@@ -11,7 +11,7 @@ export default function UpdateStatus() {
   const handleUpdateStatus = async () => {
     try {
       const response = await axios.post(
-        "https://edviron-fs-assignment.vercel.app/api/transactions/update-status",{Headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }},
+        "https://edviron-fs-assignment.vercel.app/api/transactions/update-status",
         {
           custom_order_id: customOrderId,
           status: newStatus,
