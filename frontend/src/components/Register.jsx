@@ -9,11 +9,14 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/register", {
-        email,
-        password,
-        name,
-      });
+      const response = await axios.post(
+        "https://edviron-fs-assignment.vercel.app/api/auth/register",
+        {
+          email,
+          password,
+          name,
+        }
+      );
       console.log("Registration successful", response.data);
     } catch (error) {
       console.error("Registration failed", error);
