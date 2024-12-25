@@ -10,11 +10,11 @@ export default function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<TransactionsPage />} />
+        <Route path="/transactions" element={<TransactionsPage />} />
         <Route path="/school/:schoolId" element={<SchoolTransactionsPage />} />
         <Route path="/status" element={<StatusPage />} />
         <Route path="/update-status" element={<UpdateStatus />} />
-        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/" element={<AuthPage />} />
       </Routes>
     </Router>
   );

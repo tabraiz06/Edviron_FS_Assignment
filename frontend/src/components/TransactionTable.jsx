@@ -6,7 +6,7 @@ export default function TransactionTable({ transactions, setFilteredStatus }) {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   if (!token) {
-    navigate("/auth");
+    navigate("/");
   }
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;

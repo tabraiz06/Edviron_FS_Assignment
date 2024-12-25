@@ -21,7 +21,7 @@ export default function Login() {
 
       localStorage.setItem("token", response.data.token);
       if (response.data.token) {
-        navigate("/");
+        navigate("/transactions");
       }
     } catch (error) {
       console.error("Login failed", error);
