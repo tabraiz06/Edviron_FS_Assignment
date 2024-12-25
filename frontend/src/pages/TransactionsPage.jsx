@@ -49,6 +49,14 @@ export default function TransactionsPage() {
           >
             Check Status
           </button>
+          <button
+            onClick={() => navigate("/update-status")}
+            className={`${localStorage.getItem(
+              "theme"
+            )} bg-blue-500 rounded p-2 ml-2`} 
+          >
+            Update Status
+          </button>
         </div>
       </div>
       <TransactionTable

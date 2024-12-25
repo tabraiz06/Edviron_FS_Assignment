@@ -60,7 +60,7 @@ export default function TransactionTable({ transactions, setFilteredStatus }) {
           {currentItems.map((t, idx) => (
             <tr
               key={idx}
-              className="border-t hover:bg-gray-100 cursor-pointer hover:transform hover:scale-105 transition duration-200 p-4 hover:text-black"
+              className="border-t hover:bg-gray-100 cursor-pointer hover:transform hover:scale-105 transition duration-100 p-4 hover:text-black"
             >
               <td>{indexOfFirstItem + idx + 1}</td>
 

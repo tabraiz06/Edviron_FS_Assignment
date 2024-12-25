@@ -36,6 +36,7 @@ const checkStatus = async (req, res) => {
 // Manual Transaction Status Update
 const updateTransactionStatus = async (req, res) => {
   const { custom_order_id, status } = req.body;
+
   try {
     const transaction = await Transaction.findOneAndUpdate(
       { custom_order_id },
