@@ -19,7 +19,6 @@ export default function TransactionsPage() {
         "https://edviron-fs-assignment.vercel.app/api/transactions"
       );
       setTransactions(res.data);
-      console.log(res.data);
     } catch (err) {
       console.error(err);
     }
@@ -53,7 +52,7 @@ export default function TransactionsPage() {
             onClick={() => navigate("/update-status")}
             className={`${localStorage.getItem(
               "theme"
-            )} bg-blue-500 rounded p-2 ml-2`} 
+            )} bg-blue-500 rounded p-2 ml-2`}
           >
             Update Status
           </button>
