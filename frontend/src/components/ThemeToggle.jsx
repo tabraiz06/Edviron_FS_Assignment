@@ -19,9 +19,10 @@ export default function ThemeToggle() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.reload();
+    window.location.href = "/";
+    
   }
-
+const token = localStorage.getItem("token");
   return (
     <div className="p-4 flex justify-between">
       <button
@@ -30,7 +31,11 @@ export default function ThemeToggle() {
       >
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
-      <button className="bg-red-500 p-2 rounded" onClick={handleLogout}>Logout</button>
+      {token && (
+        <button onClick={handleLogout} className="p-2 bg-red-500 dark:bg-gray-700 rounded text-white">
+          Logout
+        </button>
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { head } from "../../../backend/routes/transactionRoutes";
 
 export default function UpdateStatus() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function UpdateStatus() {
   const handleUpdateStatus = async () => {
     try {
       const response = await axios.post(
-        "https://edviron-fs-assignment.vercel.app/api/transactions/update-status",
+        "https://edviron-fs-assignment.vercel.app/api/transactions/update-status",{Headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }},
         {
           custom_order_id: customOrderId,
           status: newStatus,

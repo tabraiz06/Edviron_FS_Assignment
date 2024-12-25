@@ -21,6 +21,7 @@ export default function Login() {
 
       localStorage.setItem("token", response.data.token);
       if (response.data.token) {
+        window.location.href = "/transactions";
         navigate("/transactions");
       }
     } catch (error) {

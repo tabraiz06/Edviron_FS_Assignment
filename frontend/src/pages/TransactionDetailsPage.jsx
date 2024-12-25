@@ -9,7 +9,10 @@ export default function TransactionDetailsPage() {
   useEffect(() => {
     axios
       .get(
-        `https://edviron-fs-assignment.vercel.app/api/transactions/${schoolId}`
+        `https://edviron-fs-assignment.vercel.app/api/transactions/${schoolId}`,
+        {
+          Headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       )
       .then((res) => setTransaction(res.data))
       .catch((err) => console.error(err));
